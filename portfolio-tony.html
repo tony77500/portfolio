@@ -1,0 +1,922 @@
+<!-- STYLE: 09 - Blanc Éditorial Magazine -->
+<!-- PALETTE: #f9f6f0, #1a1612, #d6cfc4, #ede8e1, #6b6560 -->
+<!-- FONTS: Cormorant Garamond + Jost -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DCMTONY — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f6f0;
+      --ink: #1a1612;
+      --muted: #7a7168;
+      --border: #ddd8cf;
+      --surface: #f0ece4;
+      --accent: #1a1612;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(249,246,240,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      letter-spacing: -0.3px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo em {
+      font-style: italic;
+      opacity: 0.45;
+    }
+
+    nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: 64px;
+      padding: 96px 48px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: end;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-left {}
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 6.5vw, 84px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -1px;
+      margin-bottom: 0;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-bottom: 8px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: #4a4540;
+      line-height: 1.75;
+      max-width: 420px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+    }
+
+    .hero-stat {}
+
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      padding: 0 48px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 20px 32px 20px 0;
+      border-right: 1px solid var(--border);
+      margin-right: 24px;
+      white-space: nowrap;
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ftag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      background: transparent;
+    }
+
+    .ftag.active, .ftag:hover {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    /* ── PROJECTS GRID ── */
+    .projects {
+      padding: 64px 48px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    /* Layout des cards */
+    .pcard:nth-child(1) { grid-column: span 7; }
+    .pcard:nth-child(2) { grid-column: span 5; }
+    .pcard:nth-child(3) { grid-column: span 5; }
+    .pcard:nth-child(4) { grid-column: span 7; }
+    .pcard:nth-child(5) { grid-column: span 12; }
+
+    /* PROJECT CARD */
+    .pcard {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg);
+      transition: box-shadow 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pcard:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+      transform: translateY(-3px);
+    }
+
+    /* Preview zone */
+    .pcard-preview {
+      position: relative;
+      overflow: hidden;
+      background: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .pcard:nth-child(1) .pcard-preview,
+    .pcard:nth-child(4) .pcard-preview { height: 360px; }
+    .pcard:nth-child(2) .pcard-preview,
+    .pcard:nth-child(3) .pcard-preview { height: 280px; }
+    .pcard:nth-child(5) .pcard-preview { height: 320px; }
+
+    .pcard-preview iframe {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      border: none;
+      pointer-events: none;
+      display: block;
+    }
+
+    /* Overlay au hover */
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17,17,17,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .pcard:hover .preview-overlay {
+      background: rgba(17,17,17,0.55);
+    }
+
+    .preview-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s;
+      white-space: nowrap;
+    }
+
+    .pcard:hover .preview-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .preview-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Card body */
+    .pcard-body {
+      padding: 24px 28px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pcard-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .pcard-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pcard-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .pcard-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .pcard-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: #5a5550;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .pcard-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pcard-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .pcard-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: gap 0.2s;
+    }
+
+    .pcard-link:hover { gap: 10px; }
+
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 64px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 400;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-left h2 em { font-style: italic; color: var(--muted); }
+
+    .about-left p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #5a5550;
+      line-height: 1.75;
+    }
+
+    .about-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .about-item {
+      background: var(--bg);
+      padding: 28px 24px;
+    }
+
+    .about-item-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--surface);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .about-item-icon svg { width: 18px; height: 18px; }
+
+    .about-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .about-item-desc {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT CTA ── */
+    .cta-section {
+      padding: 96px 48px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .cta-section h2 em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #5a5550;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+    }
+
+    .footer-logo em { font-style: italic; opacity: 0.4; }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .pcard:nth-child(1),
+      .pcard:nth-child(2),
+      .pcard:nth-child(3),
+      .pcard:nth-child(4),
+      .pcard:nth-child(5) { grid-column: span 12; }
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 60px 20px 48px; }
+      .filter-bar { padding: 0 20px; flex-wrap: wrap; }
+      .projects { padding: 40px 20px; }
+      .about-strip { grid-template-columns: 1fr; gap: 40px; padding: 48px 20px; }
+      .cta-section { padding: 64px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; gap: 8px; }
+      .pcard:nth-child(1) .pcard-preview,
+      .pcard:nth-child(4) .pcard-preview { height: 240px; }
+      .pcard:nth-child(2) .pcard-preview,
+      .pcard:nth-child(3) .pcard-preview { height: 200px; }
+      .pcard:nth-child(5) .pcard-preview { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">DCMTONY</a>
+    <ul class="nav-links">
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#approche">Approche</a></li>
+    </ul>
+    <a href="mailto:contact@tonydigital.fr" class="nav-cta">
+      Discutons de votre projet
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="13" height="13"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left reveal">
+      <div class="hero-eyebrow">Développeur Web Freelance · Île-de-France</div>
+      <h1>Des sites qui<br/>vendent, <em>vraiment.</em></h1>
+    </div>
+    <div class="hero-right reveal" style="transition-delay:0.1s">
+      <p class="hero-desc">Je conçois des sites vitrines pour les restaurants, cafés et commerces locaux — rapides à livrer, hébergés gratuitement, pensés pour attirer des clients.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Projets livrés</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">0€</div>
+          <div class="hero-stat-label">Hébergement</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">En ligne</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-label">Secteurs</span>
+    <div class="filter-tags">
+      <span class="ftag active">Tous</span>
+      <span class="ftag">Restauration</span>
+      <span class="ftag">Café & Boissons</span>
+      <span class="ftag">App Web</span>
+      <span class="ftag">Food Truck</span>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projets">
+    <div class="projects-grid">
+
+      <!-- 1. The Juice Lab -->
+      <article class="pcard reveal" style="transition-delay:0.0s">
+        <div class="pcard-preview">
+          <iframe src="https://tony77500.github.io/The-Juice-Lab/" loading="lazy" scrolling="no" title="The Juice Lab preview"></iframe>
+          <div class="preview-overlay">
+            <a href="https://tony77500.github.io/The-Juice-Lab/" target="_blank" class="preview-btn">
+              Voir le site
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-top">
+            <span class="pcard-tag">Café & Boissons · Chelles</span>
+            <span class="pcard-num">01</span>
+          </div>
+          <div class="pcard-title">The Juice Lab</div>
+          <p class="pcard-desc">Juice bar artisanal à Chelles. Site vitrine avec carte des jus, valeurs de la marque et identité visuelle fraîche et engageante.</p>
+          <div class="pcard-footer">
+            <div class="pcard-chips">
+              <span class="chip">Vitrine</span>
+              <span class="chip">Mobile</span>
+              <span class="chip">GitHub Pages</span>
+            </div>
+            <a href="https://tony77500.github.io/The-Juice-Lab/" target="_blank" class="pcard-link">
+              Voir le site
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Aum Caffè -->
+      <article class="pcard reveal" style="transition-delay:0.08s">
+        <div class="pcard-preview">
+          <iframe src="https://tony77500.github.io/Aum-Caff-/" loading="lazy" scrolling="no" title="Aum Caffè preview"></iframe>
+          <div class="preview-overlay">
+            <a href="https://tony77500.github.io/Aum-Caff-/" target="_blank" class="preview-btn">
+              Voir le site
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-top">
+            <span class="pcard-tag">Café · Samois-sur-Seine</span>
+            <span class="pcard-num">02</span>
+          </div>
+          <div class="pcard-title">Aum Caffè</div>
+          <p class="pcard-desc">Café de spécialité en bord de Seine. Ambiance chaleureuse et authentique, menu clair et prise de contact facilitée.</p>
+          <div class="pcard-footer">
+            <div class="pcard-chips">
+              <span class="chip">Vitrine</span>
+              <span class="chip">Café</span>
+            </div>
+            <a href="https://tony77500.github.io/Aum-Caff-/" target="_blank" class="pcard-link">
+              Voir le site
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Tealyne -->
+      <article class="pcard reveal" style="transition-delay:0.12s">
+        <div class="pcard-preview">
+          <iframe src="https://tony77500.github.io/tealyne/" loading="lazy" scrolling="no" title="Tealyne preview"></iframe>
+          <div class="preview-overlay">
+            <a href="https://tony77500.github.io/tealyne/" target="_blank" class="preview-btn">
+              Voir le site
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-top">
+            <span class="pcard-tag">Bubble Tea · Chelles</span>
+            <span class="pcard-num">03</span>
+          </div>
+          <div class="pcard-title">Tealyne</div>
+          <p class="pcard-desc">Boutique de bubble tea à Chelles. Design coloré et moderne avec une présentation claire des boissons et des offres.</p>
+          <div class="pcard-footer">
+            <div class="pcard-chips">
+              <span class="chip">Vitrine</span>
+              <span class="chip">Menu</span>
+            </div>
+            <a href="https://tony77500.github.io/tealyne/" target="_blank" class="pcard-link">
+              Voir le site
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Kat'Delizia -->
+      <article class="pcard reveal" style="transition-delay:0.16s">
+        <div class="pcard-preview">
+          <iframe src="https://tony77500.github.io/KATDELIZIA/" loading="lazy" scrolling="no" title="Kat'Delizia preview"></iframe>
+          <div class="preview-overlay">
+            <a href="https://tony77500.github.io/KATDELIZIA/" target="_blank" class="preview-btn">
+              Voir le site
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-top">
+            <span class="pcard-tag">Food Truck · Familial</span>
+            <span class="pcard-num">04</span>
+          </div>
+          <div class="pcard-title">Kat'Delizia</div>
+          <p class="pcard-desc">Food truck familial avec une identité chaleureuse. Menu, planning des emplacements et présence réseaux sociaux intégrée.</p>
+          <div class="pcard-footer">
+            <div class="pcard-chips">
+              <span class="chip">Food Truck</span>
+              <span class="chip">Mobile</span>
+            </div>
+            <a href="https://tony77500.github.io/KATDELIZIA/" target="_blank" class="pcard-link">
+              Voir le site
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. LoopNote — full width -->
+      <article class="pcard reveal" style="transition-delay:0.2s">
+        <div class="pcard-preview">
+          <iframe src="https://tony77500.github.io/LoopNoteAI/" loading="lazy" scrolling="no" title="LoopNote preview"></iframe>
+          <div class="preview-overlay">
+            <a href="https://tony77500.github.io/LoopNoteAI/" target="_blank" class="preview-btn">
+              Voir l'app
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-top">
+            <span class="pcard-tag">Application Web · Intelligence Artificielle</span>
+            <span class="pcard-num">05</span>
+          </div>
+          <div class="pcard-title">LoopNote — Le journal qui pense</div>
+          <p class="pcard-desc">Application de journaling intime propulsée par l'IA. Analyse émotionnelle, profil psychologique, export PDF, authentification complète, mode nuit et responsive total. Un projet SaaS complet développé de A à Z.</p>
+          <div class="pcard-footer">
+            <div class="pcard-chips">
+              <span class="chip">App Web</span>
+              <span class="chip">AI-Powered</span>
+              <span class="chip">Auth</span>
+              <span class="chip">PDF Export</span>
+              <span class="chip">Dark Mode</span>
+            </div>
+            <a href="https://tony77500.github.io/LoopNoteAI/" target="_blank" class="pcard-link">
+              Voir l'app
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip" id="approche">
+    <div class="about-left reveal">
+      <h2>Simple, rapide,<br/><em>sans prise de tête.</em></h2>
+      <p>Je travaille avec les restaurateurs, cafetiers et commerçants locaux qui n'ont pas le temps de gérer un prestataire compliqué. Un site livré en quelques jours, hébergé gratuitement sur GitHub Pages, avec un design professionnel adapté à leur image.</p>
+    </div>
+    <div class="about-right reveal" style="transition-delay:0.1s">
+      <div class="about-item">
+        <div class="about-item-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3v14M3 10h14" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="about-item-title">Design sur mesure</div>
+        <div class="about-item-desc">Aucun template générique — chaque site est créé pour l'identité unique du client.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" stroke="#111" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="about-item-title">Livraison rapide</div>
+        <div class="about-item-desc">Un site vitrine livré en 3 à 5 jours. Pas de devis qui traîne pendant des semaines.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#111" stroke-width="1.5"/><path d="M7 5V4a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#111" stroke-width="1.5"/></svg>
+        </div>
+        <div class="about-item-title">0€ d'hébergement</div>
+        <div class="about-item-desc">Hébergement sur GitHub Pages — gratuit à vie pour le client, sans engagement.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h12M10 4l6 6-6 6" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="about-item-title">Mobile-first</div>
+        <div class="about-item-desc">Chaque site est optimisé pour le mobile — là où 80% des clients recherchent un resto.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 reveal>Votre business<br/>mérite un <em>vrai site.</em></h2>
+    <p>Vous êtes dans la restauration ou le commerce local ? Parlons-en.</p>
+    <div class="cta-buttons">
+      <a href="mailto:contact@tonydigital.fr" class="btn-primary">Demander un devis gratuit</a>
+      <a href="https://instagram.com" target="_blank" class="btn-secondary">Voir mon Instagram</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">DCMTONY</div>
+    <div class="footer-note">© 2025 · Tous droits réservés</div>
+    <div class="footer-location">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="7" r="3" stroke="#888" stroke-width="1.4"/><path d="M8 2C5.24 2 3 4.24 3 7c0 4 5 9 5 9s5-5 5-9c0-2.76-2.24-5-5-5z" stroke="#888" stroke-width="1.4"/></svg>
+      Île-de-France · Disponible pour nouveaux projets
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Trigger hero immediately
+    setTimeout(() => {
+      document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('visible'));
+    }, 100);
+  </script>
+
+</body>
+</html>
